@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.action.extension" value="html" />
+
+	<!-- Configuration for the default package. -->
+	<package name="default" extends="struts-default" namespace="/">
+	
+		<action name="login" class="controller.UsersAction">
+			<result name="success">/login.jsp</result>
+		</action>
+		<action name="processlogin" class="controller.UsersAction" method="processlogin">
+			<result name="success">/home.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="logout" class="controller.UsersAction" method="logout">
+			<result name="success">/login.jsp</result>
+		</action>
+		
+		
+	    <action name="index" class="controller.AchatAction">
+			<result name="success">/index.jsp</result>
+			
+		</action>
+	
+		<action name="addnew" class="controller.AchatAction" method="addNew">
+			<result name="success">/addnew.jsp</result>
+		</action>
+		<action name="processadd" class="controller.AchatAction" method="processAddNew">
+			<result name="success">/index.jsp</result>
+			<result name="error">/addnew.jsp</result>
+		</action> 
+	 	
+		<action name="update" class="controller.AchatAction" method="update">
+			<result name="success">/update.jsp</result>
+		</action>
+		<action name="process-update" class="controller.AchatAction" method="processUpdate">
+			<result name="success">/index.jsp</result>
+			<result name="error">/update.jsp</result>
+		</action>
+	
+		<action name="delete" class="controller.AchatAction" method="delete">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		<action name="search" class="controller.AchatAction" method="search">
+			<result name="success">/search.jsp</result>
+		</action>
+		<action name="process-search" class="controller.AchatAction" method="processSearch">
+			<result name="success">/search.jsp</result>
+		</action>
+		<action name="home" class="controller.AchatAction" method="home">
+			<result name="success">/home.jsp</result>
+			
+		</action>
+		<!--  inventory side -->
+		
+	
+		<action name="inventaire" class="controller.InventaireAction" method="inventaire">
+			<result name="success">/inventaire.jsp</result>
+		</action>
+		
+		<action name="addnewinv" class="controller.InventaireAction" method="addNewInv">
+			<result name="success">/addnewinv.jsp</result>
+		</action>
+		<action name="process-addnewInv" class="controller.InventaireAction" method="processAddNewInv">
+			<result name="success">/inventaire.jsp</result>
+			<result name="error">/addnewinv.jsp</result>
+		</action>
+		
+		<action name="updateinv" class="controller.InventaireAction" method="updateInv">
+			<result name="success">/updateinv.jsp</result>
+		</action>
+		<action name="process-updateInv" class="controller.InventaireAction" method="processUpdateInv">
+			<result name="success">/inventaire.jsp</result>
+			<result name="error">/updateinv.jsp</result>
+		</action>
+		
+		<action name="deleteInv" class="controller.InventaireAction" method="deleteInventory">
+			<result name="success">/inventaire.jsp</result>
+			<result name="error">/inventaire.jsp</result>
+		</action>
+		
+		<action name="searchInventory" class="controller.InventaireAction" method="searchInv">
+			<result name="success">/searchInventory.jsp</result>
+		</action>
+		<action name="process-searchinv" class="controller.InventaireAction" method="processSearchInv">
+			<result name="success">/searchInventory.jsp</result>
+			<result name="error">/searchInventory.jsp</result>
+		</action>
+		
+		<!-- history side -->
+		
+		<action name="invhistorique" class="controller.InvHistoriqueAction" method="invhistory">
+			<result name="success">/invhistorique.jsp</result>
+		</action>
+		<action name="process-invhistorique" class="controller.InvHistoriqueAction" method="processInvhistory">
+			<result name="success">/invhistorique.jsp</result>
+		</action> 
+		
+		
+	</package>
+</struts>
